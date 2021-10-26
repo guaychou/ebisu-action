@@ -23,8 +23,10 @@ Message id get by ebisu.
 
 ## Example usage
 
+```yaml
 uses: guaychou/ebisu-action@main
 with:
   service-name: 'Service name'
   message: "Deployment on going bro"
   address: "http://ebisu-address.com/api/v1/alertwithmessage"
+```
