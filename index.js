@@ -22,7 +22,8 @@ try {
     }
   })
     .then(function(response) {
-      console.log(response)
+      console.log("Ebisu status code: ", response.status);
+      console.log("Ebisu response data: ", response.data);
       core.setOutput("id: ", response.data.result.message_id);
     })
     .catch(function(error) {
