@@ -12,7 +12,7 @@ try {
 
   validUrl.isUri(address)
   core.setOutput("time", time);
-  var address = address + "/api/v1/alertwithmessage"
+  address = address + "/api/v1/alertwithmessage"
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify({
       service : service,
