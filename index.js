@@ -20,16 +20,19 @@ try {
   })
   console.log(`The event payload: ${payload}`);
 
-  const instance = axios.create({
-    baseURL: address,
-    timeout: 1000,
-    data: payload,
-  });  
-  axios(instance).then(function(response) {
+  axios.post(address, payload, {
+    headers: {
+      // Overwrite Axios's automatically set Content-Type
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(function(response) {
       console.log(response)
       core.setOutput("id: ", response.data.result.message_id);
-  })
-
+    })
+    .catch(function(error) {
+      core.setFailed(error)
+    })
 } catch (error) {
   core.setFailed(error.message);
 }
